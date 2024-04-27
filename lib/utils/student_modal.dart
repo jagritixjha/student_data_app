@@ -1,10 +1,10 @@
 import 'dart:io';
 
 class StudentData {
-  final String name;
-  final int grid;
-  final String standard;
-  final File image;
+  String name = '';
+  String grid = '';
+  String standard = '';
+  File? image;
 
   StudentData({
     required this.name,
@@ -13,19 +13,19 @@ class StudentData {
     required this.image,
   });
 
-  factory StudentData.fromMap(Map<String, dynamic> key) {
-    return StudentData(
-      name: key['name'],
-      grid: key['grid'],
-      standard: key['standard'],
-      image: key['image'],
-    );
-  }
-
-  Map<String, dynamic> get toMap => {
-        'name': name,
-        'grid': grid,
-        'standard': standard,
-        'image': image,
-      };
+  // factory StudentData.fromMap(Map<String, dynamic> key) {
+  //   return StudentData(
+  //     name: key['name'],
+  //     grid: key['grid'],
+  //     standard: key['standard'],
+  //     image: key['image'],
+  //   );
+  // }
+  //
+  // Map<String, dynamic> get toMap => {
+  //       'name': name,
+  //       'grid': grid,
+  //       'standard': standard,
+  //       'image': image,
+  //     };
 }

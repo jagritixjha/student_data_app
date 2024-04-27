@@ -12,7 +12,7 @@ class Routes {
       addDetailsScreen = 'addDetailsScreen';
 
   static Map<String, WidgetBuilder> screens = {
-    '/': (context) => const HomrScreen(),
+    '/': (context) => const HomeScreen(),
     'showDetailsScreen': (context) => const ShowDetailsScreen(),
     'addDetailsScreen': (context) => const AddDetailsScreen(),
   };
