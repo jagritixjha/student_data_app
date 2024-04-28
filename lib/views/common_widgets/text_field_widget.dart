@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:student_data_app/utils/global_data.dart';
 
 class TextFieldWidget extends StatelessWidget {
   IconData? icon;
@@ -56,7 +57,7 @@ class TextFieldWidget extends StatelessWidget {
               enabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(8),
                 borderSide: BorderSide(
-                  color: Colors.indigo.shade100,
+                  color: primaryColor,
                   width: 1.4,
                 ),
               ),

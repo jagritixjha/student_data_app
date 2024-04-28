@@ -21,28 +21,6 @@ class _AddDetailsScreenState extends State<AddDetailsScreen> {
   String? name, grid, standard;
   File? imagee;
 
-  void saveData() {
-    if (_formKey.currentState!.validate()) {
-      _formKey.currentState!.save();
-      // StudentData finalProduct = StudentData(
-      //   name: name!,
-      //   grid: grid!,
-      //   standard: standard!,
-      //   image: 'assets/emptyScreen.png',
-      // );
-      // finalProduct.getProductList();
-      // Fluttertoast.showToast(msg: 'Product Added');
-
-      _formKey.currentState!.reset();
-      // finalProduct.reset();
-      // resetVar();
-      for (var i in studentObj) {
-        log('$i');
-      }
-      setState(() {});
-    }
-  }
-
   Future<void> _pickImage() async {
     final ImageSource? source = await showModalBottomSheet<ImageSource>(
       context: context,
@@ -131,6 +109,7 @@ class _AddDetailsScreenState extends State<AddDetailsScreen> {
         log(i.name);
         log(i.standard);
         log(i.grid);
+        log('$i');
       }
       name = standard = grid = imagee = null;
       _formKey.currentState!.reset();
@@ -146,15 +125,20 @@ class _AddDetailsScreenState extends State<AddDetailsScreen> {
         shadowColor: Colors.white,
         elevation: 2,
         leading: IconButton(
-            onPressed: () {
-              Navigator.pushNamed(context, Routes.navigateTo.homeScreen);
-            },
-            icon: const Icon(Icons.arrow_back_ios_new_outlined)),
+          onPressed: () {
+            Navigator.pushNamed(context, Routes.navigateTo.homeScreen);
+          },
+          icon: Icon(
+            Icons.arrow_back_ios_new_outlined,
+            color: primaryTextColor,
+          ),
+        ),
         title: Text(
           'Add Student Details',
           style: GoogleFonts.poppins(
-            textStyle: const TextStyle(
+            textStyle: TextStyle(
               fontSize: 20,
+              color: primaryTextColor,
               fontWeight: FontWeight.w600,
             ),
           ),
@@ -217,7 +201,7 @@ class _AddDetailsScreenState extends State<AddDetailsScreen> {
                                 child: IconButton(
                                   icon: Icon(
                                     Icons.add,
-                                    color: Colors.indigo.shade900,
+                                    color: primaryTextColor,
                                   ),
                                   onPressed: _pickImage,
                                 ),
@@ -287,7 +271,7 @@ class _AddDetailsScreenState extends State<AddDetailsScreen> {
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10),
                         ),
-                        backgroundColor: Colors.indigo.shade100,
+                        backgroundColor: primaryColor,
                         fixedSize: Size(MediaQuery.of(context).size.width, 48),
                         shadowColor: Colors.blue.shade50,
                         elevation: 6,
@@ -297,7 +281,7 @@ class _AddDetailsScreenState extends State<AddDetailsScreen> {
                         style: GoogleFonts.poppins(
                           textStyle: TextStyle(
                             fontSize: 18,
-                            color: Colors.indigo.shade900,
+                            color: primaryTextColor,
                             fontWeight: FontWeight.w600,
                           ),
                         ),
