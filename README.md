@@ -79,7 +79,7 @@ Below is a video demonstrating the app's workflow and usage:
 To run the Student Data Manager App on your local machine, follow these steps:
 
 ```bash
-git clone https://github.com/yourusername/student-data-manager-app.git
+git clone https://github.com/jagritixjha/student-data-manager-app.git
 cd student-data-manager-app
 flutter pub get
 flutter run
