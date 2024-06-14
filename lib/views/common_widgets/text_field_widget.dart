@@ -4,7 +4,8 @@ import 'package:student_data_app/utils/global_data.dart';
 
 class TextFieldWidget extends StatelessWidget {
   IconData? icon;
-  String? hint, labelText, validatorVariable;
+  String? hint, labelText;
+  String? validatorVariable;
   String? Function(String?)? validatorFunc;
   void Function(String?)? saveData;
   int? maxline;

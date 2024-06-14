@@ -19,11 +19,12 @@ class _ShowDetailsScreenState extends State<ShowDetailsScreen> {
   final _formKey = GlobalKey<FormState>();
   File? imagee;
 
-  void Function()? onPressedd(File pfp) {
-    _pickImage(pfp);
+  void Function()? onPressedd(StudentData sd) {
+    _pickImage(sd);
+    return null;
   }
 
-  Future<void> _pickImage(File pfp) async {
+  Future<void> _pickImage(StudentData sd) async {
     {
       final ImageSource? source = await showModalBottomSheet<ImageSource>(
         context: context,
@@ -70,21 +71,20 @@ class _ShowDetailsScreenState extends State<ShowDetailsScreen> {
         XFile? file = await image.pickImage(source: source);
         if (file != null) {
           imagee = File(file.path);
-          pfp = imagee!;
+          sd.image = imagee!;
           setState(() {});
         }
       }
     }
   }
 
-  void handleSubmit() {
+  void handleSubmit(StudentData sd) {
     bool validation = _formKey.currentState!.validate();
-    bool imageValidation = imagee != null;
 
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
         content: Text(
-          validation && imageValidation
+          validation
               ? 'Form saved'
               : 'Please complete the form and upload a profile pic',
           style: GoogleFonts.poppins(
@@ -98,7 +98,7 @@ class _ShowDetailsScreenState extends State<ShowDetailsScreen> {
       ),
     );
 
-    if (validation && imageValidation) {
+    if (validation) {
       _formKey.currentState!.save();
       _formKey.currentState!.reset();
       setState(() {});
@@ -147,7 +147,9 @@ class _ShowDetailsScreenState extends State<ShowDetailsScreen> {
                       height: 250,
                       width: double.infinity,
                       padding: const EdgeInsets.symmetric(
-                          horizontal: 16, vertical: 10),
+                        horizontal: 16,
+                        vertical: 10,
+                      ),
                       decoration: BoxDecoration(
                         color: Colors.indigo.shade50,
                         boxShadow: [
@@ -158,18 +160,17 @@ class _ShowDetailsScreenState extends State<ShowDetailsScreen> {
                             spreadRadius: 10,
                           )
                         ],
-                        borderRadius:
-                            const BorderRadius.all(Radius.circular(12)),
+                        borderRadius: const BorderRadius.all(
+                          Radius.circular(12),
+                        ),
                       ),
                       child: Center(
                         child: Stack(
                           children: [
                             CircleAvatar(
                               radius: 70,
-                              // backgroundColor:
-                              //     Colors.indigo.shade800.withOpacity(0.2),
-                              foregroundImage: AssetImage(
-                                sd.image!.path,
+                              foregroundImage: FileImage(
+                                File(sd.image!.path),
                               ),
                               child: Text(
                                 'Update',
@@ -186,14 +187,15 @@ class _ShowDetailsScreenState extends State<ShowDetailsScreen> {
                               bottom: 2,
                               right: 2,
                               child: CircleAvatar(
-                                backgroundColor: Colors.indigo.shade200,
+                                backgroundColor:
+                                    Colors.indigo.shade200.withOpacity(0.8),
                                 child: IconButton(
                                   icon: Icon(
                                     Icons.edit_outlined,
                                     color: primaryTextColor,
                                   ),
                                   onPressed: () {
-                                    onPressedd(sd.image!);
+                                    onPressedd(sd);
                                     setState(() {});
                                   },
                                 ),
@@ -233,8 +235,85 @@ class _ShowDetailsScreenState extends State<ShowDetailsScreen> {
                       },
                       saveData: (value) => sd.standard = value!,
                     ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Container(
+                          height: 1,
+                          width: MediaQuery.of(context).size.width / 5,
+                          color: Colors.blueGrey.shade100,
+                        ),
+                        Text(
+                          'Enter Marks Obtained',
+                          style: GoogleFonts.poppins(
+                            textStyle: TextStyle(
+                              fontSize: 12,
+                              fontWeight: FontWeight.w500,
+                              color: Colors.indigo.shade400,
+                            ),
+                          ),
+                        ),
+                        Container(
+                          height: 1,
+                          width: MediaQuery.of(context).size.width / 5,
+                          color: Colors.blueGrey.shade100,
+                        ),
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 16,
+                    ),
+                    TextFieldWidget(
+                        hint: 'Out Of 100',
+                        labelText: 'English',
+                        validatorVariable: sd.englishMarks.toString(),
+                        validatorFunc: (value) {
+                          return value!.isEmpty ? 'enter Standard' : null;
+                        },
+                        saveData: (value) {
+                          sd.englishMarks = double.parse(value!);
+                        }),
+                    TextFieldWidget(
+                      hint: 'Out Of 100',
+                      labelText: 'Science',
+                      validatorVariable: sd.scienceMarks.toString(),
+                      validatorFunc: (value) {
+                        return value!.isEmpty ? 'enter Standard' : null;
+                      },
+                      saveData: (value) =>
+                          sd.scienceMarks = double.parse(value!),
+                    ),
+                    TextFieldWidget(
+                      hint: 'Out Of 100',
+                      labelText: 'Maths',
+                      validatorVariable: sd.mathsMarks.toString(),
+                      validatorFunc: (value) {
+                        return value!.isEmpty ? 'enter Standard' : null;
+                      },
+                      saveData: (value) => sd.mathsMarks = double.parse(value!),
+                    ),
+                    TextFieldWidget(
+                      hint: 'Out Of 100',
+                      labelText: 'Social Studies',
+                      validatorVariable: sd.socialStudiesMarks.toString(),
+                      validatorFunc: (value) {
+                        return value!.isEmpty ? 'enter Standard' : null;
+                      },
+                      saveData: (value) =>
+                          sd.socialStudiesMarks = double.parse(value!),
+                    ),
+                    TextFieldWidget(
+                      hint: 'Out Of 100',
+                      labelText: 'Computer',
+                      validatorVariable: sd.computerMarks.toString(),
+                      validatorFunc: (value) {
+                        return value!.isEmpty ? 'enter Standard' : null;
+                      },
+                      saveData: (value) =>
+                          sd.computerMarks = double.parse(value!),
+                    ),
                     ElevatedButton(
-                      onPressed: handleSubmit,
+                      onPressed: () => handleSubmit(sd),
                       style: ElevatedButton.styleFrom(
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10),
@@ -254,6 +333,43 @@ class _ShowDetailsScreenState extends State<ShowDetailsScreen> {
                           ),
                         ),
                       ),
+                    ),
+                    const SizedBox(
+                      height: 16,
+                    ),
+                    ElevatedButton(
+                        onPressed: null,
+                        style: ElevatedButton.styleFrom(
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          backgroundColor: primaryColor,
+                          fixedSize:
+                              Size(MediaQuery.of(context).size.width, 48),
+                          shadowColor: Colors.blue.shade50,
+                          elevation: 6,
+                        ),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            const Icon(Icons.download_rounded),
+                            const SizedBox(
+                              width: 8,
+                            ),
+                            Text(
+                              'Download PDF',
+                              style: GoogleFonts.poppins(
+                                textStyle: TextStyle(
+                                  fontSize: 18,
+                                  color: primaryTextColor,
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              ),
+                            ),
+                          ],
+                        )),
+                    const SizedBox(
+                      height: 16,
                     ),
                   ],
                 ),

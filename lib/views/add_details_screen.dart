@@ -19,6 +19,11 @@ class AddDetailsScreen extends StatefulWidget {
 class _AddDetailsScreenState extends State<AddDetailsScreen> {
   final _formKey = GlobalKey<FormState>();
   String? name, grid, standard;
+  double? englishMarks,
+      scienceMarks,
+      mathsMarks,
+      socialStudiesMarks,
+      computerMarks;
   File? imagee;
 
   Future<void> _pickImage() async {
@@ -194,10 +199,11 @@ class _AddDetailsScreenState extends State<AddDetailsScreen> {
                               ),
                             ),
                             Positioned(
-                              bottom: 0,
-                              right: 0,
+                              bottom: 2,
+                              right: 2,
                               child: CircleAvatar(
-                                backgroundColor: Colors.indigo.shade200,
+                                backgroundColor:
+                                    Colors.indigo.shade200.withOpacity(0.8),
                                 child: IconButton(
                                   icon: Icon(
                                     Icons.add,
@@ -241,32 +247,11 @@ class _AddDetailsScreenState extends State<AddDetailsScreen> {
                       },
                       saveData: (value) => standard = value!,
                     ),
+                    const SizedBox(
+                      height: 16,
+                    ),
                     ElevatedButton(
                       onPressed: handleSubmit,
-                      // () {
-                      //   bool validation = _formKey.currentState!.validate();
-                      //   bool imageValidation = imagee == null ? false : true;
-                      //   ScaffoldMessenger.of(context).showSnackBar(
-                      //     SnackBar(
-                      //       content: Text(
-                      //         validation && imageValidation
-                      //             ? 'Form saved'
-                      //             : 'Please upload a profile pic',
-                      //         style: GoogleFonts.poppins(
-                      //           textStyle: const TextStyle(
-                      //             fontSize: 14,
-                      //             color: Colors.white,
-                      //             fontWeight: FontWeight.w400,
-                      //           ),
-                      //         ),
-                      //       ),
-                      //     ),
-                      //   );
-                      //   if (validation) {
-                      //     _formKey.currentState!.save();
-                      //     setState(() {});
-                      //   }
-                      // },
                       style: ElevatedButton.styleFrom(
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10),
@@ -286,6 +271,9 @@ class _AddDetailsScreenState extends State<AddDetailsScreen> {
                           ),
                         ),
                       ),
+                    ),
+                    const SizedBox(
+                      height: 16,
                     ),
                   ],
                 ),
