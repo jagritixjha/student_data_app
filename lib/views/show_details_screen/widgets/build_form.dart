@@ -135,9 +135,11 @@ class BuildMarksheetForm {
           TextFieldWidget(
               hint: 'Out Of 100',
               labelText: 'English',
-              validatorVariable: sd.englishMarks.toString(),
+              validatorVariable: sd.englishMarks.toString() == '0.0'
+                  ? ''
+                  : sd.englishMarks.toString(),
               validatorFunc: (value) {
-                return value!.isEmpty ? 'enter Standard' : null;
+                return value!.isEmpty ? 'enter marks' : null;
               },
               saveData: (value) {
                 sd.englishMarks = double.parse(value!);
@@ -145,36 +147,44 @@ class BuildMarksheetForm {
           TextFieldWidget(
             hint: 'Out Of 100',
             labelText: 'Science',
-            validatorVariable: sd.scienceMarks.toString(),
+            validatorVariable: sd.scienceMarks.toString() == '0.0'
+                ? ''
+                : sd.scienceMarks.toString(),
             validatorFunc: (value) {
-              return value!.isEmpty ? 'enter Standard' : null;
+              return value!.isEmpty ? 'enter marks' : null;
             },
             saveData: (value) => sd.scienceMarks = double.parse(value!),
           ),
           TextFieldWidget(
             hint: 'Out Of 100',
             labelText: 'Maths',
-            validatorVariable: sd.mathsMarks.toString(),
+            validatorVariable: sd.mathsMarks.toString() == '0.0'
+                ? ''
+                : sd.mathsMarks.toString(),
             validatorFunc: (value) {
-              return value!.isEmpty ? 'enter Standard' : null;
+              return value!.isEmpty ? 'enter marks' : null;
             },
             saveData: (value) => sd.mathsMarks = double.parse(value!),
           ),
           TextFieldWidget(
             hint: 'Out Of 100',
             labelText: 'Social Studies',
-            validatorVariable: sd.socialStudiesMarks.toString(),
+            validatorVariable: sd.socialStudiesMarks.toString() == '0.0'
+                ? ''
+                : sd.socialStudiesMarks.toString(),
             validatorFunc: (value) {
-              return value!.isEmpty ? 'enter Standard' : null;
+              return value!.isEmpty ? 'enter marks' : null;
             },
             saveData: (value) => sd.socialStudiesMarks = double.parse(value!),
           ),
           TextFieldWidget(
             hint: 'Out Of 100',
             labelText: 'Computer',
-            validatorVariable: sd.computerMarks.toString(),
+            validatorVariable: sd.computerMarks.toString() == '0.0'
+                ? ''
+                : sd.computerMarks.toString(),
             validatorFunc: (value) {
-              return value!.isEmpty ? 'enter Standard' : null;
+              return value!.isEmpty ? 'enter marks' : null;
             },
             saveData: (value) => sd.computerMarks = double.parse(value!),
           ),
