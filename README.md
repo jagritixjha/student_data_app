@@ -26,26 +26,64 @@ The Student Data Manager App is a dedicated mobile application designed to manag
 <tr>
 <td style="width: 250px; border: 0;">
 
-#### ✨ Home Screen (With Data)
-<img src="screenshots/home_with_data.png" height="400em" />
-
-</td>
-<td style="width: 220px; border: 0;">
-
 #### ✨ Home Screen (Empty)
-<img src="screenshots/home_empty.png" height="400em" />
+<img src="screenshots/screenshot1.png" height="400em" />
 
 </td>
 <td style="width: 220px; border: 0;">
 
-#### ✨ Data Entry Screen
-<img src="screenshots/data_entry.png" height="400em" />
+#### ✨ Home Screen (With Data)
+<img src="screenshots/screenshot6.png" height="400em" />
+
+</td><td style="width: 220px; border: 0;">
+
+#### ✨ Home Screen (With Data)
+<img src="screenshots/screenshot7.png" height="400em" />
 
 </td>
 <td style="width: 220px; border: 0;">
 
 #### ✨ Edit Data Screen
-<img src="screenshots/edit_data.png" height="400em" />
+<img src="screenshots/screenshot2.png" height="400em" />
+
+</td>
+<td style="width: 220px; border: 0;">
+
+#### ✨ Data Entry Screen
+<img src="screenshots/screenshot3.png" height="400em" />
+
+</td>
+<td style="width: 220px; border: 0;">
+
+#### ✨ Edit Data Screen
+<img src="screenshots/screenshot4.png" height="400em" />
+
+</td>
+<td style="width: 220px; border: 0;">
+
+#### ✨ Edit Data Screen
+<img src="screenshots/screenshot5.png" height="400em" />
+
+</td><td style="width: 220px; border: 0;">
+
+#### ✨ Edit Data Screen
+<img src="screenshots/screenshot8.png" height="400em" />
+
+</td><td style="width: 220px; border: 0;">
+
+#### ✨ Edit Data Screen
+<img src="screenshots/screenshot9.png" height="400em" />
+
+</td><td style="width: 220px; border: 0;">
+
+#### ✨ Edit Data Screen
+<img src="screenshots/screenshot10.png" height="400em" />
+
+</td>
+<td style="width: 220px; border: 0;">
+
+#### ✨ Edit Data Screen
+<img src="screenshots/screenshot11.png" height="400em" />
 
 </td>
 </tr>
