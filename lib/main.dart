@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Student Data App',
-      // home: PdfPreviewScreen(),
+      // home: const PdfPreviewScreen(),
       routes: Routes.screens,
     );
   }

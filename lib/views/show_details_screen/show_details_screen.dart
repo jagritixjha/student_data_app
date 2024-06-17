@@ -9,6 +9,7 @@ import 'package:printing/printing.dart';
 import 'package:student_data_app/utils/global_data.dart';
 import 'package:student_data_app/utils/routes.dart';
 import 'package:student_data_app/utils/student_modal.dart';
+import 'package:student_data_app/views/show_details_screen/widgets/build_elevated_button.dart';
 import 'package:student_data_app/views/show_details_screen/widgets/build_form.dart';
 import 'package:student_data_app/views/show_details_screen/widgets/generate_pdf.dart';
 
@@ -76,18 +77,16 @@ class _ShowDetailsScreenState extends State<ShowDetailsScreen> {
     }
   }
 
+  bool _validation = false;
   void handleSubmit(
       {required StudentData sd,
       String snackBarText = "",
       bool canPop = false}) {
-    bool validation = formKey.currentState!.validate();
-
+    _validation = formKey.currentState!.validate();
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
         content: Text(
-          validation
-              ? snackBarText
-              : 'Please complete the form and upload a profile pic',
+          _validation ? snackBarText : 'Please complete the form first.',
           style: GoogleFonts.poppins(
             textStyle: const TextStyle(
               fontSize: 14,
@@ -99,11 +98,11 @@ class _ShowDetailsScreenState extends State<ShowDetailsScreen> {
       ),
     );
 
-    if (validation) {
+    if (_validation) {
       formKey.currentState!.save();
-      formKey.currentState!.reset();
       setState(() {});
       if (canPop) {
+        formKey.currentState!.reset();
         Navigator.pushNamed(context, Routes.navigateTo.homeScreen);
       }
     }
@@ -125,8 +124,13 @@ class _ShowDetailsScreenState extends State<ShowDetailsScreen> {
 
   Future<void> sharePdf(StudentData sd) async {
     handleSubmit(sd: sd);
-    final pdfData = await generatePdf(sd);
-    await Printing.sharePdf(bytes: pdfData, filename: 'student_marksheet.pdf');
+    if (_validation) {
+      final pdfData = await generatePdf(sd);
+      await Printing.sharePdf(
+        bytes: pdfData,
+        filename: 'student_marksheet.pdf',
+      );
+    }
   }
 
   @override
@@ -157,92 +161,53 @@ class _ShowDetailsScreenState extends State<ShowDetailsScreen> {
           ),
         ),
       ),
-      body: Padding(
+      body: ListView(
         padding: const EdgeInsets.all(16.0),
-        child: SingleChildScrollView(
-          child: Column(
+        children: [
+          BuildMarksheetForm.marksheetForm(
+            sd: sd,
+            context: context,
+            onPressed: () {
+              _pickImage(sd);
+              setState(() {});
+            },
+          ),
+          buildElevatedButton(
+            sd: sd,
+            context: context,
+            text: 'Submit',
+            bg: primaryColor,
+            onPressed: () => handleSubmit(
+              sd: sd,
+              snackBarText: 'Form saved',
+              canPop: true,
+            ),
+          ),
+          const SizedBox(
+            height: 16,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              BuildMarksheetForm.marksheetForm(
+              buildElevatedButton(
+                size: MediaQuery.of(context).size.width / 2.250,
                 sd: sd,
                 context: context,
-                onPressed: () {
-                  _pickImage(sd);
-                  setState(() {});
-                },
+                text: 'Download PDF',
+                bg: primaryColor,
+                onPressed: () => downloadPdf(sd),
               ),
               buildElevatedButton(
+                size: MediaQuery.of(context).size.width / 2.250,
                 sd: sd,
                 context: context,
-                text: 'Submit',
+                text: 'Share',
                 bg: primaryColor,
-                onPressed: () => handleSubmit(
-                  sd: sd,
-                  snackBarText: 'Form saved',
-                  canPop: true,
-                ),
-              ),
-              const SizedBox(
-                height: 16,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  buildElevatedButton(
-                    size: MediaQuery.of(context).size.width / 2.2,
-                    sd: sd,
-                    context: context,
-                    text: 'Download PDF',
-                    bg: primaryColor,
-                    onPressed: () => downloadPdf(sd),
-                  ),
-                  buildElevatedButton(
-                    size: MediaQuery.of(context).size.width / 2.2,
-                    sd: sd,
-                    context: context,
-                    text: 'Share',
-                    bg: primaryColor,
-                    onPressed: () => sharePdf(sd),
-                  ),
-                ],
-              ),
-              const SizedBox(
-                height: 16,
+                onPressed: () => sharePdf(sd),
               ),
             ],
           ),
-        ),
-      ),
-    );
-  }
-
-  ElevatedButton buildElevatedButton({
-    required StudentData sd,
-    required BuildContext context,
-    required String text,
-    required Color bg,
-    required void Function()? onPressed,
-    double? size,
-  }) {
-    return ElevatedButton(
-      onPressed: onPressed,
-      style: ElevatedButton.styleFrom(
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(10),
-        ),
-        backgroundColor: bg,
-        fixedSize: Size(size ?? MediaQuery.of(context).size.width, 48),
-        shadowColor: Colors.blue.shade50,
-        elevation: 6,
-      ),
-      child: Text(
-        text,
-        style: GoogleFonts.poppins(
-          textStyle: TextStyle(
-            fontSize: 16,
-            color: primaryTextColor,
-            fontWeight: FontWeight.w600,
-          ),
-        ),
+        ],
       ),
     );
   }

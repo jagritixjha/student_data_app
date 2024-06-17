@@ -52,8 +52,12 @@ class TextFieldWidget extends StatelessWidget {
                 borderRadius: BorderRadius.circular(8),
                 borderSide: BorderSide(color: Colors.indigo.shade200),
               ),
-              errorBorder: const UnderlineInputBorder(
-                borderSide: BorderSide(color: Colors.red, width: 1.4),
+              errorBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(8),
+                borderSide: BorderSide(
+                  color: primaryColor,
+                  width: 1.4,
+                ),
               ),
               enabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(8),
@@ -64,7 +68,7 @@ class TextFieldWidget extends StatelessWidget {
               ),
               hintText: hint,
               hintStyle: const TextStyle(
-                fontSize: 16,
+                fontSize: 14,
                 color: Colors.black45,
                 fontWeight: FontWeight.w500,
               ),

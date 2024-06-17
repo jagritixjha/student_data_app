@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:student_data_app/views/add_details_screen.dart';
-import 'package:student_data_app/views/home_screen.dart';
+import 'package:student_data_app/views/add_details_screen/add_details_screen.dart';
+import 'package:student_data_app/views/home_screen/home_screen.dart';
+import 'package:student_data_app/views/pdf_preview_screen.dart';
 import 'package:student_data_app/views/show_details_screen/show_details_screen.dart';
 
 class Routes {
@@ -8,12 +9,14 @@ class Routes {
   static Routes navigateTo = Routes._();
 
   String homeScreen = '/',
-      showDetailsScreen = 'showDetailsScreen',
-      addDetailsScreen = 'addDetailsScreen';
+      showDetailsScreen = '/showDetailsScreen',
+      addDetailsScreen = '/addDetailsScreen',
+      pdfPreview = '/pdfPreview';
 
   static Map<String, WidgetBuilder> screens = {
     '/': (context) => const HomeScreen(),
-    'showDetailsScreen': (context) => const ShowDetailsScreen(),
-    'addDetailsScreen': (context) => const AddDetailsScreen(),
+    '/showDetailsScreen': (context) => const ShowDetailsScreen(),
+    '/addDetailsScreen': (context) => const AddDetailsScreen(),
+    '/pdfPreview': (context) => PdfScreen(),
   };
 }
