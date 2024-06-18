@@ -101,7 +101,7 @@ Expanded buildGridView({required void Function(void Function()) setState}) {
                     onSelected: (value) {
                       if (value == 'pdf_preview') {
                         Navigator.pushNamed(
-                            context, Routes.navigateTo.pdfPreview);
+                            context, Routes.navigateTo.pdfPreviewScreen);
                       } else {
                         setState(() {
                           studentObj.removeAt(index);

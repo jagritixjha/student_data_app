@@ -22,6 +22,8 @@ class ShowDetailsScreen extends StatefulWidget {
 
 class _ShowDetailsScreenState extends State<ShowDetailsScreen> {
   File? imagee;
+  String? filePath;
+  bool _validation = false;
 
   Future<void> _pickImage(StudentData sd) async {
     {
@@ -77,7 +79,14 @@ class _ShowDetailsScreenState extends State<ShowDetailsScreen> {
     }
   }
 
-  bool _validation = false;
+  void navigateToPdfScreen(StudentData sd) {
+    downloadPdf(sd);
+    _validation
+        ? Navigator.pushNamed(context, Routes.navigateTo.pdfPreviewScreen,
+            arguments: filePath)
+        : null;
+  }
+
   void handleSubmit(
       {required StudentData sd,
       String snackBarText = "",
@@ -114,8 +123,9 @@ class _ShowDetailsScreenState extends State<ShowDetailsScreen> {
 
     final directory = await getExternalStorageDirectory();
     if (directory != null) {
-      final file = File('${directory.path}/student_marksheet.pdf');
+      final File file = File('${directory.path}/student_marksheet.pdf');
       await file.writeAsBytes(pdfData);
+      filePath = file.path;
       log('File saved at ${file.path}');
     } else {
       log('Storage permission denied');
@@ -172,16 +182,40 @@ class _ShowDetailsScreenState extends State<ShowDetailsScreen> {
               setState(() {});
             },
           ),
-          buildElevatedButton(
-            sd: sd,
-            context: context,
-            text: 'Submit',
-            bg: primaryColor,
-            onPressed: () => handleSubmit(
-              sd: sd,
-              snackBarText: 'Form saved',
-              canPop: true,
-            ),
+          Row(
+            children: [
+              IconButton(
+                style: IconButton.styleFrom(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  backgroundColor: primaryColor,
+                  fixedSize: const Size(48, 48),
+                  shadowColor: Colors.blue.shade50,
+                  elevation: 6,
+                ),
+                onPressed: () {
+                  navigateToPdfScreen(sd);
+                },
+                icon: Icon(
+                  Icons.picture_as_pdf_rounded,
+                  color: primaryTextColor,
+                ),
+              ),
+              const Spacer(),
+              buildElevatedButton(
+                size: 290,
+                sd: sd,
+                context: context,
+                text: 'Submit',
+                bg: primaryColor,
+                onPressed: () => handleSubmit(
+                  sd: sd,
+                  snackBarText: 'Form saved',
+                  canPop: true,
+                ),
+              ),
+            ],
           ),
           const SizedBox(
             height: 16,

@@ -11,12 +11,12 @@ class Routes {
   String homeScreen = '/',
       showDetailsScreen = '/showDetailsScreen',
       addDetailsScreen = '/addDetailsScreen',
-      pdfPreview = '/pdfPreview';
+      pdfPreviewScreen = '/pdfPreview';
 
   static Map<String, WidgetBuilder> screens = {
     '/': (context) => const HomeScreen(),
     '/showDetailsScreen': (context) => const ShowDetailsScreen(),
     '/addDetailsScreen': (context) => const AddDetailsScreen(),
-    '/pdfPreview': (context) => PdfScreen(),
+    '/pdfPreview': (context) => const PdfPreviewScreen(),
   };
 }
