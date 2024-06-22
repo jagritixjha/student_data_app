@@ -38,7 +38,7 @@ The Student Data Manager App is a dedicated mobile application designed to manag
       <img src="screenshots/screenshot7.png" height="400em" />
     </td>
     <td style="width: 25%; border: 0; text-align: center;">
-      <h4>✨ Edit Data Screen</h4>
+      <h4>✨ Data Entry Screen</h4>
       <img src="screenshots/screenshot2.png" height="400em" />
     </td>
   </tr>
@@ -49,11 +49,11 @@ The Student Data Manager App is a dedicated mobile application designed to manag
       <img src="screenshots/screenshot3.png" height="400em" />
     </td>
     <td style="width: 25%; border: 0; text-align: center;">
-      <h4>✨ Edit Data Screen</h4>
+      <h4>✨  Data Entry Screen</h4>
       <img src="screenshots/screenshot4.png" height="400em" />
     </td>
     <td style="width: 25%; border: 0; text-align: center;">
-      <h4>✨ Edit Data Screen</h4>
+      <h4>✨  Data Entry Screen</h4>
       <img src="screenshots/screenshot5.png" height="400em" />
     </td>
     <td style="width: 25%; border: 0; text-align: center;">
