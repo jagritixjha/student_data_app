@@ -20,73 +20,65 @@ The Student Data Manager App is a dedicated mobile application designed to manag
 
 **Series of screenshots that demonstrate the app's functionality and UI:**  
 <table style="border-collapse: collapse; width: 100%;">
-<tr>
-<th colspan="4" style="text-align: center; border: 0;">Screenshots</th>
-</tr>
-<tr>
-<td style="width: 250px; border: 0;">
+  <tr>
+    <th colspan="4" style="text-align: center; border: 0; font-size: 24px;">Screenshots</th>
+  </tr>
 
-#### ✨ Home Screen (Empty)
-<img src="screenshots/screenshot1.png" height="400em" />
+  <tr>
+    <td style="width: 25%; border: 0; text-align: center;">
+      <h4>✨ Home Screen (Empty)</h4>
+      <img src="screenshots/screenshot1.png" height="400em" />
+    </td>
+    <td style="width: 25%; border: 0; text-align: center;">
+      <h4>✨ Home Screen (With Data)</h4>
+      <img src="screenshots/screenshot6.png" height="400em" />
+    </td>
+    <td style="width: 25%; border: 0; text-align: center;">
+      <h4>✨ Home Screen (With Data)</h4>
+      <img src="screenshots/screenshot7.png" height="400em" />
+    </td>
+    <td style="width: 25%; border: 0; text-align: center;">
+      <h4>✨ Edit Data Screen</h4>
+      <img src="screenshots/screenshot2.png" height="400em" />
+    </td>
+  </tr>
 
-</td>
-<td style="width: 220px; border: 0;">
+  <tr>
+    <td style="width: 25%; border: 0; text-align: center;">
+      <h4>✨ Data Entry Screen</h4>
+      <img src="screenshots/screenshot3.png" height="400em" />
+    </td>
+    <td style="width: 25%; border: 0; text-align: center;">
+      <h4>✨ Edit Data Screen</h4>
+      <img src="screenshots/screenshot4.png" height="400em" />
+    </td>
+    <td style="width: 25%; border: 0; text-align: center;">
+      <h4>✨ Edit Data Screen</h4>
+      <img src="screenshots/screenshot5.png" height="400em" />
+    </td>
+    <td style="width: 25%; border: 0; text-align: center;">
+      <h4>✨ Edit Data Screen</h4>
+      <img src="screenshots/screenshot8.png" height="400em" />
+    </td>
+  </tr>
 
-#### ✨ Home Screen (With Data)
-<img src="screenshots/screenshot6.png" height="400em" />
-
-</td><td style="width: 220px; border: 0;">
-
-#### ✨ Home Screen (With Data)
-<img src="screenshots/screenshot7.png" height="400em" />
-
-</td>
-<td style="width: 220px; border: 0;">
-
-#### ✨ Edit Data Screen
-<img src="screenshots/screenshot2.png" height="400em" />
-
-</td>
-<td style="width: 220px; border: 0;">
-
-#### ✨ Data Entry Screen
-<img src="screenshots/screenshot3.png" height="400em" />
-
-</td>
-<td style="width: 220px; border: 0;">
-
-#### ✨ Edit Data Screen
-<img src="screenshots/screenshot4.png" height="400em" />
-
-</td>
-<td style="width: 220px; border: 0;">
-
-#### ✨ Edit Data Screen
-<img src="screenshots/screenshot5.png" height="400em" />
-
-</td><td style="width: 220px; border: 0;">
-
-#### ✨ Edit Data Screen
-<img src="screenshots/screenshot8.png" height="400em" />
-
-</td><td style="width: 220px; border: 0;">
-
-#### ✨ Edit Data Screen
-<img src="screenshots/screenshot9.png" height="400em" />
-
-</td><td style="width: 220px; border: 0;">
-
-#### ✨ Edit Data Screen
-<img src="screenshots/screenshot10.png" height="400em" />
-
-</td>
-<td style="width: 220px; border: 0;">
-
-#### ✨ Edit Data Screen
-<img src="screenshots/screenshot11.png" height="400em" />
-
-</td>
-</tr>
+  <tr>
+    <td style="width: 25%; border: 0; text-align: center;">
+      <h4>✨ Edit Data Screen</h4>
+      <img src="screenshots/screenshot9.png" height="400em" />
+    </td>
+    <td style="width: 25%; border: 0; text-align: center;">
+      <h4>✨ Edit Data Screen</h4>
+      <img src="screenshots/screenshot10.png" height="400em" />
+    </td>
+    <td style="width: 25%; border: 0; text-align: center;">
+      <h4>✨ Edit Data Screen</h4>
+      <img src="screenshots/screenshot11.png" height="400em" />
+    </td>
+    <td style="width: 25%; border: 0; text-align: center;">
+      <!-- Add an extra cell for alignment purposes -->
+    </td>
+  </tr>
 </table>
 
 ## Video Demo
