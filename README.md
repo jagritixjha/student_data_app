@@ -2,29 +2,61 @@
 
 The Student Data Manager App is a dedicated mobile application designed to manage student information efficiently. This app allows users to enter, display, modify, and delete student records. It includes functionalities for handling data operations seamlessly, making it ideal for educational institutions or personal data management.
 
-## Features
-
-- **Data Entry**: Easily add new student records with details such as name, age, and course.
-
-- **Dynamic Home Screen**: View all student records in a list, with options to edit or delete each entry directly.
-
-- **Edit Functionality**: Modify existing student data through an intuitive interface.
-
-- **Delete Functionality**: Remove student records with simple taps.
-
-- **Empty State Screen**: A visually appealing screen that displays when no student records are available. It includes a button to add new records and graphics indicating the empty state.
-
-- **Persistent Storage**: Student data is stored in objects and can be retrieved and modified as needed, ensuring data persistence across sessions.
-
 ## Screenshots
 
-| ✨ Home Screen (Empty) | ✨ Home Screen (With Data) | ✨ Home Screen (With Data) | ✨ Data Entry Screen |
-|------------------------|----------------------------|----------------------------|----------------------|
-| ![Home Screen (Empty)](screenshots/screenshot1.png) | ![Home Screen (With Data)](screenshots/screenshot6.png) | ![Home Screen (With Data)](screenshots/screenshot7.png) | ![Data Entry Screen](screenshots/screenshot2.png) |
-| **✨ Data Entry Screen** | **✨ Data Entry Screen** | **✨ Data Entry Screen** | **✨ Edit Data Screen** |
-| ![Data Entry Screen](screenshots/screenshot3.png) | ![Data Entry Screen](screenshots/screenshot4.png) | ![Data Entry Screen](screenshots/screenshot5.png) | ![Edit Data Screen](screenshots/screenshot8.png) |
-| **✨ Edit Data Screen** | **✨ Edit Data Screen** | **✨ Edit Data Screen** | |
-| ![Edit Data Screen](screenshots/screenshot9.png) | ![Edit Data Screen](screenshots/screenshot10.png) | ![Edit Data Screen](screenshots/screenshot11.png) | |
+<table>
+  <tr>
+    <td style="text-align: center;">
+      <strong>✨ Home Screen (Empty)</strong><br>
+      <img src="screenshots/screenshot1.png" alt="Home Screen (Empty)" style="max-width: 100%; height: auto;">
+    </td>
+    <td style="text-align: center;">
+      <strong>✨ Home Screen (With Data)</strong><br>
+      <img src="screenshots/screenshot6.png" alt="Home Screen (With Data)" style="max-width: 100%; height: auto;">
+    </td>
+    <td style="text-align: center;">
+      <strong>✨ Home Screen (With Data)</strong><br>
+      <img src="screenshots/screenshot7.png" alt="Home Screen (With Data)" style="max-width: 100%; height: auto;">
+    </td>
+    <td style="text-align: center;">
+      <strong>✨ Data Entry Screen</strong><br>
+      <img src="screenshots/screenshot2.png" alt="Data Entry Screen" style="max-width: 100%; height: auto;">
+    </td>
+  </tr>
+  <tr>
+    <td style="text-align: center;">
+      <strong>✨ Data Entry Screen</strong><br>
+      <img src="screenshots/screenshot3.png" alt="Data Entry Screen" style="max-width: 100%; height: auto;">
+    </td>
+    <td style="text-align: center;">
+      <strong>✨ Data Entry Screen</strong><br>
+      <img src="screenshots/screenshot4.png" alt="Data Entry Screen" style="max-width: 100%; height: auto;">
+    </td>
+    <td style="text-align: center;">
+      <strong>✨ Data Entry Screen</strong><br>
+      <img src="screenshots/screenshot5.png" alt="Data Entry Screen" style="max-width: 100%; height: auto;">
+    </td>
+    <td style="text-align: center;">
+      <strong>✨ Edit Data Screen</strong><br>
+      <img src="screenshots/screenshot8.png" alt="Edit Data Screen" style="max-width: 100%; height: auto;">
+    </td>
+  </tr>
+  <tr>
+    <td style="text-align: center;">
+      <strong>✨ Edit Data Screen</strong><br>
+      <img src="screenshots/screenshot9.png" alt="Edit Data Screen" style="max-width: 100%; height: auto;">
+    </td>
+    <td style="text-align: center;">
+      <strong>✨ Edit Data Screen</strong><br>
+      <img src="screenshots/screenshot10.png" alt="Edit Data Screen" style="max-width: 100%; height: auto;">
+    </td>
+    <td style="text-align: center;">
+      <strong>✨ Edit Data Screen</strong><br>
+      <img src="screenshots/screenshot11.png" alt="Edit Data Screen" style="max-width: 100%; height: auto;">
+    </td>
+    <td></td> <!-- Placeholder for alignment -->
+  </tr>
+</table>
 
 ## Video Demo
 
