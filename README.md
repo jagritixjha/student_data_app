@@ -18,91 +18,36 @@ The Student Data Manager App is a dedicated mobile application designed to manag
 
 ## Screenshots
 
-**Series of screenshots that demonstrate the app's functionality and UI:**  
-<table style="border-collapse: collapse; width: 100%;">
-  <tr>
-    <th colspan="4" style="text-align: center; border: 0; font-size: 24px;">Screenshots</th>
-  </tr>
-
-  <tr>
-    <td style="width: 25%; border: 0; text-align: center;">
-      <h4>✨ Home Screen (Empty)</h4>
-      <img src="screenshots/screenshot1.png" height="400em" />
-    </td>
-    <td style="width: 25%; border: 0; text-align: center;">
-      <h4>✨ Home Screen (With Data)</h4>
-      <img src="screenshots/screenshot6.png" height="400em" />
-    </td>
-    <td style="width: 25%; border: 0; text-align: center;">
-      <h4>✨ Home Screen (With Data)</h4>
-      <img src="screenshots/screenshot7.png" height="400em" />
-    </td>
-    <td style="width: 25%; border: 0; text-align: center;">
-      <h4>✨ Data Entry Screen</h4>
-      <img src="screenshots/screenshot2.png" height="400em" />
-    </td>
-  </tr>
-
-  <tr>
-    <td style="width: 25%; border: 0; text-align: center;">
-      <h4>✨ Data Entry Screen</h4>
-      <img src="screenshots/screenshot3.png" height="400em" />
-    </td>
-    <td style="width: 25%; border: 0; text-align: center;">
-      <h4>✨  Data Entry Screen</h4>
-      <img src="screenshots/screenshot4.png" height="400em" />
-    </td>
-    <td style="width: 25%; border: 0; text-align: center;">
-      <h4>✨  Data Entry Screen</h4>
-      <img src="screenshots/screenshot5.png" height="400em" />
-    </td>
-    <td style="width: 25%; border: 0; text-align: center;">
-      <h4>✨ Edit Data Screen</h4>
-      <img src="screenshots/screenshot8.png" height="400em" />
-    </td>
-  </tr>
-
-  <tr>
-    <td style="width: 25%; border: 0; text-align: center;">
-      <h4>✨ Edit Data Screen</h4>
-      <img src="screenshots/screenshot9.png" height="400em" />
-    </td>
-    <td style="width: 25%; border: 0; text-align: center;">
-      <h4>✨ Edit Data Screen</h4>
-      <img src="screenshots/screenshot10.png" height="400em" />
-    </td>
-    <td style="width: 25%; border: 0; text-align: center;">
-      <h4>✨ Edit Data Screen</h4>
-      <img src="screenshots/screenshot11.png" height="400em" />
-    </td>
-    <td style="width: 25%; border: 0; text-align: center;">
-      <!-- Add an extra cell for alignment purposes -->
-    </td>
-  </tr>
-</table>
+| ✨ Home Screen (Empty) | ✨ Home Screen (With Data) | ✨ Home Screen (With Data) | ✨ Data Entry Screen |
+|------------------------|----------------------------|----------------------------|----------------------|
+| ![Home Screen (Empty)](screenshots/screenshot1.png) | ![Home Screen (With Data)](screenshots/screenshot6.png) | ![Home Screen (With Data)](screenshots/screenshot7.png) | ![Data Entry Screen](screenshots/screenshot2.png) |
+| **✨ Data Entry Screen** | **✨ Data Entry Screen** | **✨ Data Entry Screen** | **✨ Edit Data Screen** |
+| ![Data Entry Screen](screenshots/screenshot3.png) | ![Data Entry Screen](screenshots/screenshot4.png) | ![Data Entry Screen](screenshots/screenshot5.png) | ![Edit Data Screen](screenshots/screenshot8.png) |
+| **✨ Edit Data Screen** | **✨ Edit Data Screen** | **✨ Edit Data Screen** | |
+| ![Edit Data Screen](screenshots/screenshot9.png) | ![Edit Data Screen](screenshots/screenshot10.png) | ![Edit Data Screen](screenshots/screenshot11.png) | |
 
 ## Video Demo
 
 Below is a video demonstrating the app's workflow and usage:
 
-<img src="screenshots/app_overview.gif" height="500em" />
+![App Overview Video](screenshots/app_overview.gif)
 
 ## How to Use
 
 1. **Starting the App**:
-    - Launch the app to view the splash screen, followed by the home screen displaying all student records.
-    - If no records exist, the empty state screen is shown.
+   - Launch the app to view the splash screen, followed by the home screen displaying all student records.
+   - If no records exist, the empty state screen is shown.
 
 2. **Adding a Student**:
-    - Tap the 'Add Student' button on the empty state screen or the '+' icon on the home screen.
-    - Fill in the student's details and save.
+   - Tap the 'Add Student' button on the empty state screen or the '+' icon on the home screen.
+   - Fill in the student's details and save.
 
 3. **Modifying and Deleting Data**:
-    - On the home screen, tap the 'Edit' icon next to any student record to modify.
-    - Use the 'Delete' icon to remove a student record.
+   - On the home screen, tap the 'Edit' icon next to any student record to modify.
+   - Use the 'Delete' icon to remove a student record.
 
 4. **Viewing Student Details**:
-    - Tap on any student entry in the home screen list to view detailed information.
+   - Tap on any student entry in the home screen list to view detailed information.
 
 ## Installation
 
