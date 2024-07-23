@@ -92,6 +92,7 @@ class _ShowDetailsScreenState extends State<ShowDetailsScreen> {
       String snackBarText = "",
       bool canPop = false}) {
     _validation = formKey.currentState!.validate();
+
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
         content: Text(

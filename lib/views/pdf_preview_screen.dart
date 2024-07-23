@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_pdfview/flutter_pdfview.dart';
 
@@ -7,6 +9,7 @@ class PdfPreviewScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     String path = ModalRoute.of(context)!.settings.arguments as String;
+    log("pdf path ----------- $path");
     return Scaffold(
       appBar: AppBar(
         title: const Text('PDF Preview'),

@@ -18,7 +18,7 @@ Expanded buildListView({required void Function(void Function()) setState}) {
             Navigator.pushNamed(
               context,
               Routes.navigateTo.showDetailsScreen,
-              arguments: student,
+              // arguments: student,
             );
           },
           child: Container(
